@@ -14,12 +14,11 @@ services:
       - key: USE_MOCK_LLM
         value: "false"
 
+staticSites:
   # Frontend - Static Site
-  - type: web
+  - type: static
     name: datasmith-wala-frontend
-    env: static
     rootDir: frontend
-    plan: free
     buildCommand: npm install && npm run build
     staticPublishPath: dist
     envVars:
