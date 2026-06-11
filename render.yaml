@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: datasmith-wala-api
+    env: docker
+    rootDir: backend
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false
+      - key: TESSERACT_PATH
+        value: /usr/bin/tesseract
+      - key: USE_MOCK_LLM
+        value: "false"

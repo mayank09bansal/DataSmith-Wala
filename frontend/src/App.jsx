@@ -35,9 +35,12 @@ function App() {
     })
 
     try {
-      const response = await axios.post('/api/process', formData, {
+      // In dev: VITE_API_URL is unset, so '/api' is used (Vite proxy strips '/api' prefix)
+      // In prod: VITE_API_URL = 'https://backend-url.onrender.com'
+      const API_BASE = import.meta.env.VITE_API_URL || '/api';
+      const response = await axios.post(`${API_BASE}/process`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
-        timeout: 30000  // 30 seconds timeout to give enough time for Groq
+        timeout: 60000  // 60 seconds for Render cold starts
       })
 
       const agentMessage = {

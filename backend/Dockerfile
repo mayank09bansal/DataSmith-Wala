@@ -27,5 +27,5 @@ RUN mkdir -p uploads
 # Make port 8000 available to the world outside this container
 EXPOSE 8000
 
-# Run main.py when the container launches
-CMD ["uvicorn", "main.py", "--host", "0.0.0.0", "--port", "8000"]
+# Run the server - use PORT env var for Render compatibility
+CMD ["sh", "-c", "uvicorn main:app --host 0.0.0.0 --port ${PORT:-8000}"]
