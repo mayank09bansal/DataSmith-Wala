@@ -1,0 +1,17 @@
+fastapi
+uvicorn
+python-multipart
+pydantic
+python-dotenv
+openai
+google-generativeai
+langchain
+langchain-openai
+pytesseract
+pdfplumber
+youtube-transcript-api
+httpx
+jinja2
+python-jose[cryptography]
+passlib[bcrypt]
+pillow
