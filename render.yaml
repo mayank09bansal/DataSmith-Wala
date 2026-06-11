@@ -14,9 +14,8 @@ services:
       - key: USE_MOCK_LLM
         value: "false"
 
-staticSites:
   # Frontend - Static Site
-  - type: static
+  - type: static_site
     name: datasmith-wala-frontend
     rootDir: frontend
     buildCommand: npm install && npm run build
